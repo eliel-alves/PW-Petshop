@@ -6,7 +6,7 @@
 package br.edu.ifsul.testes;
 
 import br.edu.ifsul.modelo.Produto;
-import br.edu.ifsul.modelo.Serviço;
+import br.edu.ifsul.modelo.Servico;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,13 +15,13 @@ import javax.persistence.Persistence;
  *
  * @author eliel
  */
-public class TestePersistirServiço {
+public class TestePersistirServico {
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("PW-Petshop-ModelPU");
         EntityManager em = emf.createEntityManager();
         
-        Serviço s = new Serviço();
+        Servico s = new Servico();
         s.setNome("Serviço 1");
         Produto p = em.find(Produto.class, 1);
         s.getProdutos().add(p);

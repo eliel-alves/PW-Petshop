@@ -30,7 +30,7 @@ import org.hibernate.validator.constraints.Length;
  */
 @Entity
 @Table(name = "servico")
-public class Serviço implements Serializable {
+public class Servico implements Serializable {
     
     @Id
     @SequenceGenerator(name = "seq_servico", sequenceName = "seq_servico_id", allocationSize = 1)
@@ -52,7 +52,7 @@ public class Serviço implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "produto", referencedColumnName = "id", nullable = false))
     private Set<Produto> produtos = new HashSet<>();
 
-    public Serviço() {
+    public Servico() {
     }
 
     public Integer getId() {
@@ -105,7 +105,7 @@ public class Serviço implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Serviço other = (Serviço) obj;
+        final Servico other = (Servico) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
